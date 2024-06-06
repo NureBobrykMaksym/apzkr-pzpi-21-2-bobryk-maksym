@@ -1,0 +1,768 @@
+{
+	"info": {
+		"_postman_id": "ce8d4ee5-759d-4cf2-978f-ef33f49ecfdd",
+		"name": "area_pulse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31467948"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": {\r\n        \"username\": \"username1234\",\r\n        \"email\": \"max1234@gmail.com\",\r\n        \"password\": \"testPassword\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{prefix}}/users",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": {\r\n        \"email\": \"max123@gmail.com\",\r\n        \"password\": \"testPassword\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{prefix}}/users/login",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get current user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{prefix}}/user",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": {\r\n        \"bio\": \"new bio, you know...\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{prefix}}/user",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create location",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\": {\r\n        \"name\": \"location\",\r\n        \"description\": \"aksghjgdsf\",\r\n        \"area\": 500\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{prefix}}/locations",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all locations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{prefix}}/locations",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get location  by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{prefix}}/locations/9",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"locations",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get location with attendances",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{prefix}}/locations/12/attendances",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"locations",
+						"12",
+						"attendances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update location",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\": {\r\n        \"name\": \"updated location\",\r\n        \"description\": \"updated description\",\r\n        \"area\": \"1337\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{prefix}}/locations/12",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"locations",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete location",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{prefix}}/locations/10",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"locations",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create attendance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"attendance\": {\r\n        \"name\": \"Sensor 4\",\r\n        \"sectorId\": 9\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{prefix}}/attendances",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"attendances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get attendances",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{prefix}}/attendances",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"attendances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Analytics",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\": {\r\n        \"locationId\": 12\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{prefix}}/analytics",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"analytics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create sector",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sector\": {\r\n        \"name\": \"second sector\",\r\n        \"locationId\": 12\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{prefix}}/sectors",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"sectors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all sectors",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{prefix}}/sectors?locationId=12",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"sectors"
+					],
+					"query": [
+						{
+							"key": "locationId",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get sector by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{prefix}}/sectors/9",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"sectors",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update sector",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sector\": {\r\n        \"name\": \"updated location\",\r\n        \"locationId\": 12\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{prefix}}/sectors/6",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"sectors",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete sector",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{prefix}}/sectors/8",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"sectors",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get sensor by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{prefix}}/sensors/1",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"sensors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all sensors",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{prefix}}/sensors/?sectorId=9",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"sensors",
+						""
+					],
+					"query": [
+						{
+							"key": "sectorId",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create sensor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sensor\": {\r\n        \"name\": \"new sensor\",\r\n        \"sectorId\": 9\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{prefix}}/sensors",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"sensors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update sensor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sensor\": {\r\n        \"name\": \"update\",\r\n        \"sectorId\": 9\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{prefix}}/sensors/1",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"sensors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete sensor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{prefix}}/sensors/1",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"sensors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3000/"
+		},
+		{
+			"key": "prefix",
+			"value": "/api",
+			"type": "string"
+		}
+	]
+}
